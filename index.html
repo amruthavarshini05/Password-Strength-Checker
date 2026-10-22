@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Password Strength Checker</h1>
+    <p class="subtitle">Create a secure password with real-time feedback</p>
+
+    <div class="inner-box">
+      <div class="input-group">
+        <input type="password" id="passwordInput" placeholder="Enter your password" />
+        <span class="toggle-password" onclick="togglePassword()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="eyeIcon">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </span>
+      </div>
+
+      <div class="strength-meter">
+        <div class="strength-meter-fill" id="strengthMeter"></div>
+      </div>
+
+      <div class="strength-text" id="strengthText"></div>
+
+      <div class="requirements">
+        <h3>Password Requirements</h3>
+        <div class="requirement" id="req-length">
+          <span class="requirement-icon">✓</span>
+          <span>At least 8 characters</span>
+        </div>
+        <div class="requirement" id="req-uppercase">
+          <span class="requirement-icon">✓</span>
+          <span>Contains uppercase letter (A-Z)</span>
+        </div>
+        <div class="requirement" id="req-lowercase">
+          <span class="requirement-icon">✓</span>
+          <span>Contains lowercase letter (a-z)</span>
+        </div>
+        <div class="requirement" id="req-number">
+          <span class="requirement-icon">✓</span>
+          <span>Contains number (0-9)</span>
+        </div>
+        <div class="requirement" id="req-special">
+          <span class="requirement-icon">✓</span>
+          <span>Contains special character (!@#$%^&*)</span>
+        </div>
+      </div>
+
+      <div class="crack-time" id="crackTime">
+        <h4>⏱️ Estimated Crack Time</h4>
+        <p id="crackTimeText"></p>
+      </div>
+    </div>
+
+    <div class="suggestions" id="suggestions">
+      <span class="close-suggestions" onclick="closeSuggestions()">×</span>
+      <h4>💡 Suggestions for Improvement</h4>
+      <ul id="suggestionsList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
